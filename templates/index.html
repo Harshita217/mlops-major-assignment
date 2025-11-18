@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Olivetti Face Predict</title>
+  </head>
+  <body>
+    <h1>Upload face image (will be resized to 64×64)</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required>
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction is not none %}
+      <h2>Predicted class: {{ prediction }}</h2>
+    {% endif %}
+  </body>
+</html>
